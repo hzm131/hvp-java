@@ -5,9 +5,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>hvp-web</module>
-        <module>hvp-service</module>
-        <module>hvp-model</module>
-        <module>hvp-dao</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
