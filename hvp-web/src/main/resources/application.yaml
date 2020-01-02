@@ -1,2 +1,18 @@
-server:
-  port: 8081
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/hzm?useUnicode=true&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#整合mybatis
+mybatis:
+  mapper-locations: classpath:mybatis/mapping/*.xml
+  type-aliases-package: com.hzm.entity
+
+#showSql
+logging:
+  level:
+    com:
+      hzm:
+        mapper : debug
