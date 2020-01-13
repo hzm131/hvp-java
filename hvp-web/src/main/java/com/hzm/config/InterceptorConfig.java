@@ -1,8 +1,8 @@
 package com.hzm.config;
 
-import com.hzm.interceptor.FirstInterceptor;
 import com.hzm.interceptor.LoginHandlerInterceptor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -16,12 +16,19 @@ public class InterceptorConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        /*registry.addInterceptor(new FirstInterceptor())
-                .addPathPatterns("/**")
-                .order(1);//指定执行顺序，数值越小越优先*/
-        registry.addInterceptor(new LoginHandlerInterceptor())
-                .addPathPatterns("/**")
-                .order(1);//指定执行顺序，数值越小越优先
+        // 注册拦截器
+        InterceptorRegistration loginRegistry = registry.addInterceptor(new LoginHandlerInterceptor());
+        // 拦截路径
+        loginRegistry.addPathPatterns("/**");
+        // 排除路径
+        loginRegistry.excludePathPatterns("/");
+        loginRegistry.excludePathPatterns("/user/login");
+        loginRegistry.excludePathPatterns("/user/loginout");
+        loginRegistry.excludePathPatterns("/user/registered");
+        // 排除资源请求
+        loginRegistry.excludePathPatterns("/css/login/*.css");
+        loginRegistry.excludePathPatterns("/js/login/**/*.js");
+        loginRegistry.excludePathPatterns("/image/login/*.png");
     }
 
 }
