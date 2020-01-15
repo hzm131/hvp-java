@@ -1,11 +1,11 @@
-package com.hzm.param;
+package com.hzm.utils;
 
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Size;
 
 public class LoginUtils {
-    @Length(max = 32,min = 1,message = "长度最大32，最小1")
+    @Size(max = 32,min = 1,message = "长度最大32，最小1")
     private String username;
-    @Length(max = 18,min = 6,message = "长度最大18，最小6")
+    @Size(max = 18,min = 6,message = "长度最大18，最小6")
     private String password;
 
     public String getUsername() {
