@@ -11,14 +11,13 @@ import java.util.Map;
 @RequestMapping(value = "user")
 public class LoginController {
     @PostMapping(value = "/login")
-    public String login(@RequestBody LoginUtils loginUtils, Map<String,Object> map){
+    public String login(@RequestBody LoginUtils loginUtils){
         System.out.println(loginUtils.toString());
         if("hzm".equals(loginUtils.getUsername()) && "123456".equals(loginUtils.getPassword())){
 
             return "登录成功";
         }
-        map.put("msg","用户名密码错误");
-        return map.toString();
+        return "登录失败";
     }
 
     @PostMapping(value = "/registered")
