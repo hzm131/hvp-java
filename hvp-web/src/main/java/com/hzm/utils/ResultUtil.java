@@ -1,5 +1,7 @@
 package com.hzm.utils;
 
+import com.hzm.entity.Result;
+
 public class ResultUtil {
     public static Result success(Object object) {
         Result result = new Result();

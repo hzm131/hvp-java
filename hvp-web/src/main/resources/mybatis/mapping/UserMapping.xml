@@ -13,4 +13,7 @@
         select * from hzm.user where id = #{id}
     </select>
 
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+         insert into hzm.user(userName, passWord, realName) values (#{userName},#{passWord},#{realName})
+    </insert>
 </mapper>

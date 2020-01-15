@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository //dao层
 public interface UserMapper {
     User Sel(int id);
+    int addUser(User user);
 }

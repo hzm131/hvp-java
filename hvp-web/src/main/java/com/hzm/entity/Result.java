@@ -1,12 +1,8 @@
-package com.hzm.utils;
+package com.hzm.entity;
 
 
 
 import org.slf4j.LoggerFactory;
-
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Result<T> {
     @SuppressWarnings("unused")
