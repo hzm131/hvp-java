@@ -4,11 +4,11 @@ import javax.validation.constraints.Size;
 
 public class User {
     private Integer id;
-    @Size(max = 32,min = 1,message = "长度最大32，最小1")
+    @Size(max = 32,min = 1,message = "userName:长度最大32，最小1")
     private String userName;
-    @Size(max = 18,min = 6,message = "长度最大18，最小6")
+    @Size(max = 18,min = 6,message = "passWord:长度最大18，最小6")
     private String passWord;
-    @Size(max = 18,min = 6,message = "长度最大18，最小6")
+    @Size(max = 18,min = 6,message = "realName:长度最大18，最小6")
     private String realName;
 
     public Integer getId() {
